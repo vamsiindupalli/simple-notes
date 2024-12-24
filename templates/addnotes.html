@@ -1,0 +1,24 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+   
+</head> --> 
+{% extends 'dashboard.html'%}
+{% block addcss %}
+    <link rel="stylesheet" href="{{url_for('static',filename='addnotes.css')}}">
+{% endblock %}
+{% block content %}
+<body>
+   
+    <form action="/addnotes" method="POST">
+        <p><input type='text' name="title" placeholder="enter title"></p>
+        <p><textarea name="description"  id=""></textarea></p>
+        <p><button>submit</button></p>
+    </form>
+
+</body>
+{% endblock %}

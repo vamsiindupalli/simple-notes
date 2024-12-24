@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Table</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Notes</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Created At</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Example rows (to be replaced by backend data) -->
+             {% for i in ndata %}
+            <tr>
+                <td>{{i[0]}}</td>
+                <td>{{i[1]}}</td>
+                <td>{{i[2]}}</td>
+               
+                <td><a href="{{url_for('viewnotes',nid=i[0])}}">View</a></td>
+                <td><a href="{{url_for('deletenotes',nid=i[0])}}" >Delete</a></td>
+                <td><a href="{{url_for('updatenotes',nid=i[0])}}" >Update</a></td>
+            </tr>
+            
+        </tbody>
+            {% endfor %}
+    </table>
+
+   
+</body>
+</html>

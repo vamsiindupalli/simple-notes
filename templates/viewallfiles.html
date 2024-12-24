@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View all files</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>files</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>FileID</th>
+                <th>Filename</th>
+                <th>Created At</th>
+                <th>time</th>
+
+                
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Example rows (to be replaced by backend data) -->
+             {% for i in filedata %}
+            <tr>
+                <td>{{i[0]}}</td>
+                <td>{{i[1]}}</td>
+                <td>{{i[2]}}</td>
+               
+                <td><a href="{{url_for('viewfile',fid=i[0])}}">View</a></td>
+                <td><a href="{{url_for('downloadfiles',fid=i[0])}}">Download</a></td>
+                <td><a >Delete</a></td>
+            </tr>
+            
+        </tbody>
+            {% endfor %}
+    </table>
+
+   
+</body>
+</html>

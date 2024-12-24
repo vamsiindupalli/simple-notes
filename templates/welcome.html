@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Notes App</title>
+    <style>
+        /* General Reset */
+        body, h1, a, button {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            /* background:url('https://images.app.goo.gl/dGB9GT3ydcJa6PcL8') no-repeat center center/cover; */
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            background-color: #f0f2f5;
+           
+        }
+        center {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 500px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        a {
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Welcome to Simple Notes App</h1>
+        <p>
+            Welcome to the Simple Notes App, your go-to place for organizing your thoughts and ideas. 
+        </p>
+        
+        <a href="{{url_for('login')}}"><button>Login</button></a>
+        <a href="{{url_for('create')}}"><button>Register</button></a>
+    </center>
+</body>
+</html>
